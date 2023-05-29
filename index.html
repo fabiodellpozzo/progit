@@ -21,6 +21,207 @@
 
   <h1>ProGit</h1>
 
+  <h2>
+Pro Git
+Scott Chacon, Ben Straub
+Version 2.1.394-2-g428d69ac, 2023-05-09
+
+  </h2>
+
+  <h3>
+    License
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0
+Unported License. To view a copy of this license, visit https://creativecommons.org/licenses/by-ncsa/3.0 or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+  </h3>
+
+  <h4>Preface by Scott Chacon</h4>
+
+  <p>
+
+Welcome to the second edition of Pro Git. The first edition was published over four years ago now.
+Since then a lot has changed and yet many important things have not. While most of the core
+commands and concepts are still valid today as the Git core team is pretty fantastic at keeping
+things backward compatible, there have been some significant additions and changes in the
+community surrounding Git. The second edition of this book is meant to address those changes and
+update the book so it can be more helpful to the new user.
+When I wrote the first edition, Git was still a relatively difficult to use and barely adopted tool for
+the harder core hacker. It was starting to gain steam in certain communities, but had not reached
+anywhere near the ubiquity it has today. Since then, nearly every open source community has
+adopted it. Git has made incredible progress on Windows, in the explosion of graphical user
+interfaces to it for all platforms, in IDE support and in business use. The Pro Git of four years ago
+knows about none of that. One of the main aims of this new edition is to touch on all of those new
+frontiers in the Git community.
+The Open Source community using Git has also exploded. When I originally sat down to write the
+book nearly five years ago (it took me a while to get the first version out), I had just started working
+at a very little known company developing a Git hosting website called GitHub. At the time of
+publishing there were maybe a few thousand people using the site and just four of us working on it.
+As I write this introduction, GitHub is announcing our 10 millionth hosted project, with nearly 5
+million registered developer accounts and over 230 employees. Love it or hate it, GitHub has
+heavily changed large swaths of the Open Source community in a way that was barely conceivable
+when I sat down to write the first edition.
+I wrote a small section in the original version of Pro Git about GitHub as an example of hosted Git
+which I was never very comfortable with. I didn’t much like that I was writing what I felt was
+essentially a community resource and also talking about my company in it. While I still don’t love
+that conflict of interests, the importance of GitHub in the Git community is unavoidable. Instead of
+an example of Git hosting, I have decided to turn that part of the book into more deeply describing
+what GitHub is and how to effectively use it. If you are going to learn how to use Git then knowing
+how to use GitHub will help you take part in a huge community, which is valuable no matter which
+Git host you decide to use for your own code.
+The other large change in the time since the last publishing has been the development and rise of
+the HTTP protocol for Git network transactions. Most of the examples in the book have been
+changed to HTTP from SSH because it’s so much simpler.
+It’s been amazing to watch Git grow over the past few years from a relatively obscure version
+control system to basically dominating commercial and open source version control. I’m happy that
+Pro Git has done so well and has also been able to be one of the few technical books on the market
+that is both quite successful and fully open source.
+I hope you enjoy this updated edition of Pro Git.
+
+  </p>
+
+    <h4>Preface by Ben Straub</h4>
+    <p>
+The first edition of this book is what got me hooked on Git. This was my introduction to a style of
+making software that felt more natural than anything I had seen before. I had been a developer for
+several years by then, but this was the right turn that sent me down a much more interesting path
+than the one I was on.
+Now, years later, I’m a contributor to a major Git implementation, I’ve worked for the largest Git
+hosting company, and I’ve traveled the world teaching people about Git. When Scott asked if I’d be
+interested in working on the second edition, I didn’t even have to think.
+It’s been a great pleasure and privilege to work on this book. I hope it helps you as much as it did
+me.
+
+    </p>
+
+
+<h4>Dedications</h4>
+    <p>
+      
+To my wife, Becky, without whom this adventure never would have begun. — Ben
+This edition is dedicated to my girls. To my wife Jessica who has supported me for all of these years
+and to my daughter Josephine, who will support me when I’m too old to know what’s going on. —
+Scott
+    </p>
+<h4>Contributors</h4>
+
+<p>
+  Since this is an Open Source book, we have gotten several errata and content changes donated over
+the years. Here are all the people who have contributed to the English version of Pro Git as an open
+source project. Thank you everyone for helping make this a better book for everyone.
+</p>
+
+<p>
+4wk-       Jonathan Sebastian Krause
+Adam Laflamme Jordan Hayashi Sergey Kuznetsov
+Adrien Ollier Joris Valette Severino Lorilla Jr
+Akrom K Josh Byster Shengbin Meng
+Alan D. Salewski Joshua Webb Sherry Hietala
+Alba Mendez Junjie Yuan Shi Yan
+Aleh Suprunovich Junyeong Yim Siarhei Bobryk
+Alex Povel Justin Clift Siarhei Krukau
+Alexander Bezzubov Jörn Auerbach Skyper
+Alexandre Garnier Kaartic Sivaraam Smaug123
+Alfred Myers KatDwo Snehal Shekatkar
+Amanda Dillon Katrin Leinweber Solt Budavári
+Andreas Bjørnestad Kausar Mehmood Song Li
+Andrei Dascalu Keith Hill Stephan van Maris
+Andrew Layman Kenneth Kin Lum Steven Roddis
+Andrew MacFie Kenneth Lum Stuart P. Bentley
+Andrew Metcalf Klaus Frank SudarsanGP
+Andrew Murphy Kristijan "Fremen" Velkovski Suhaib Mujahid
+AndyGee Krzysztof Szumny Susan Stevens
+AnneTheAgile Kyrylo Yatsenko Sven Selberg
+Anthony Loiseau Lars Vogel Thanix
+Anton Trunov Laxman Thomas Ackermann
+Antonello Piemonte Lazar95 Thomas Hartmann
+Antonino Ingargiola Leonard Laszlo Tiffany
+Ardavast Dayleryan Linus Heckemann Tom Schady
+Artem Leshchev Logan Hasson Tomas Fiers
+Atul Varma Louise Corrigan Tomoki Aonuma
+Bagas Sanjaya Luc Morin Tvirus
+Ben Sima Lukas Röllin Tyler Cipriani
+Benjamin Dopplinger Marat Radchenko Ud Yzr
+Billy Griffin Marcin Sędłak-Jakubowski UgmaDevelopment
+Bob Kline Marie-Helene Burle Vadim Markovtsev
+Bohdan Pylypenko Marius Žilėnas Vangelis Katsikaros
+Borek Bernard Markus KARG Vegar Vikan
+Brett Cannon Marti Bolivar Victor Ma
+Buzut Mashrur Mia (Sa'ad) Vipul Kumar
+C Nguyen Masood Fallahpoor Vitaly Kuznetsov
+Cadel Watson Mathieu Dubreuilh Volker Weißmann
+Carlos Martín Nieto Matt Cooper Volker-Weissmann
+Carlos Tafur Matt Trzcinski Wesley Gonçalves
+Chaitanya Gurrapu Matthew Miner William Gathoye
+5
+Changwoo Park Matthieu Moy William Turrell
+Christian Decker Mavaddat Javid Wlodek Bzyl
+Christoph Bachhuber Max Coplan Xavier Bonaventura
+Christoph Prokop Michael MacAskill Y. E
+Christopher Wilson Michael Sheaver Yann Soubeyrand
+CodingSpiderFox Michael Welch Your Name
+Cory Donnelly Michiel van der Wulp Yue Lin Ho
+Cullen Rhodes Miguel Bernabeu Yunhai Luo
+Cyril Mike Charles Yusuke SATO
+Damien Tournoud Mike Pennisi ajax333221
+Dan Schmidt Mike Thibodeau alex-koziell
+Daniel Hollas Mikhail Menshikov allen joslin
+Daniel Knittl-Frank Mitsuru Kariya andreas
+Daniel Shahaf Máximo Cuadros applecuckoo
+Daniel Sturm Niels Widger atalakam
+Daniele Tricoli Niko Stotz axmbo
+Daniil Larionov Nils Reuße bripmccann
+Danny Lin Noelle Leigh brotherben
+David Rogers OliverSieweke delta4d
+Davide Angelocola Olleg Samoylov devwebcl
+Denis Savitskiy Osman Khwaja dualsky
+Dexter Owen evanderiel
+Dexter Morganov Pablo Schläpfer eyherabh
+DiamondeX Pascal Berger flip111
+Dieter Ziller Pascal Borreli flyingzumwalt
+Dino Karic Patrice Krakow franjozen
+Dmitri Tikhonov Patrick Steinhardt goekboet
+Dmitriy Smirnov Pavel Janík grgbnc
+Doug Richardson Paweł Krupiński haripetrov
+Duncan Dean Pessimist i-give-up
+Dustin Frank Peter Kokot iprok
+Ed Flanagan Petr Bodnar jingsam
+Eden Hochbaum Petr Janeček jliljekrantz
+Eric Henziger Petr Kajzar johnhar
+Explorare Phil Mitchell leerg
+Ezra Buehler Philippe Blain maks
+Fabien-jrt Philippe Miossec mmikeww
+Fady Nagh Pratik Nadagouda mosdalsvsocld
+Felix Nehrke Rafi nicktime
+Filip Kucharczyk Raphael R noureddin
+Fornost461 Ray Chen patrick96
+Frank Rex Kerr paveljanik
+Frederico Mazzone Reza Ahmadi pedrorijo91
+Frej Drejhammar Richard Hoyle peterwwillis
+Guthrie McAfee Armstrong Ricky Senft petsuter
+HairyFotr Rintze M. Zelle rahrah
+Hamidreza Mahdavipanah Rob Blanco rmzelle
+Haruo Nakayama Robert P. Goldman root
+Helmut K. C. Tessarek Robert P. J. Day sanders@oreilly.com
+Hidde de Vries Robert Theis sharpiro
+HonkingGoose Rohan D'Souza slavos1
+6
+Howard Roman Kosenko spacewander
+Ignacy Ronald Wampler td2014
+Ilker Cat Rory twekberg
+Jan Groenewald Rüdiger Herrmann uerdogan
+Jaswinder Singh SATO Yusuke ugultopu
+Jean-Noël Avila Sam Ford un1versal
+Jeroen Oortwijn Sam Joseph xJom
+Jim Hill Sanders Kleinfeld xtreak
+Joel Davies Sarah Schneider yakirwin
+Johannes Dewender Saurav Sachidanand zwPapEr
+Johannes Schindelin Scott Bronson ᐯᕮᒪᗝᑕᕮᒣ
+John Lin Scott Jones 狄卢
+Jon Forrest Sean Head
+Jon Freed Sean Jacobs
+
+</p>
+
   <h2>Começando</h2>
   <p>
     Este capítulo será sobre como começar com o Git. Começaremos explicando algumas informações básicas sobre ferramentas de controle de versão, depois passaremos para como fazer o Git rodar em seu sistema e, finalmente, como configurá-lo para começar a trabalhar. No final deste capítulo, você deve entender por que o Git existe, por que você deve usá-lo e deve estar preparado para isso.
