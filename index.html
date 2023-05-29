@@ -233,6 +233,7 @@ Jon Freed Sean Jacobs
   </strong>chapter will be about getting started with Git. We will begin by explaining some background  on version control tools, then move on to how to get Git running on your system and finally how to  get it set up to start working with. At the end of this chapter you should understand why Git is  around, why you should use it and you should be all set up to do so. </p>
 -->
   
+  <h2>&nbsp;</h2>
   <h2>Sobre o Controle de Versão</h2>
   <p>
     O que é “controle de versão” e por que você deveria se importar? O controle de versão é um sistema que registra alterações em um arquivo ou conjunto de arquivos ao longo do tempo para que você possa recuperar versões específicas posteriormente. Para os exemplos deste livro, você usará o código-fonte do software como os arquivos cuja versão está sendo controlada, embora, na realidade, você possa fazer isso com praticamente qualquer tipo de arquivo em um computador. Se você é um designer gráfico ou web e deseja manter todas as versões de uma imagem ou layout (o que você certamente deseja), um Sistema de Controle de Versão (VCS) é uma coisa muito sábia para usar. Ele permite que você reverta os arquivos selecionados para um estado anterior, reverta todo o projeto para um estado anterior, compare as alterações ao longo do tempo, veja quem modificou pela última vez algo que pode estar causando um problema, quem introduziu um problema e quando e muito mais. Usar um VCS geralmente também significa que, se você estragar tudo ou perder arquivos, poderá recuperá-los facilmente. Além disso, você obtém tudo isso com muito pouca sobrecarga.
@@ -244,6 +245,7 @@ Jon Freed Sean Jacobs
     </strong>What is “version control”, and why should you care? Version control is a system that records  changes to a file or set of files over time so that you can recall specific versions later. For the  examples in this book, you will use software source code as the files being version controlled,  though in reality you can do this with nearly any type of file on a computer.  If you are a graphic or web designer and want to keep every version of an image or layout (which  you would most certainly want to), a Version Control System (VCS) is a very wise thing to use. It  allows you to revert selected files back to a previous state, revert the entire project back to a  previous state, compare changes over time, see who last modified something that might be causing  a problem, who introduced an issue and when, and more. Using a VCS also generally means that if  you screw things up or lose files, you can easily recover. In addition, you get all this for very little  overhead.</p>
 -->
 
+  <h2>&nbsp;</h2>
   <h2>Sistemas de Controle de Versão Local</h2>
   <p>
     O método de controle de versão escolhido por muitas pessoas é copiar os arquivos para outro diretório (talvez um diretório com carimbo de data/hora, se forem espertos). Essa abordagem é muito comum porque é muito simples, mas também é incrivelmente propensa a erros. É fácil esquecer em qual diretório você está e acidentalmente gravar no arquivo errado ou copiar arquivos que não pretendia. Para lidar com esse problema, há muito tempo os programadores desenvolveram VCSs locais que tinham um banco de dados simples que mantinha todas as alterações nos arquivos sob controle de revisão.
@@ -269,6 +271,7 @@ Jon Freed Sean Jacobs
   <p class="style1">One of the most popular VCS tools was a system called RCS, which is still distributed with many  computers today. RCS works by keeping patch sets (that is, the differences between files) in a special  format on disk; it can then re-create what any file looked like at any point in time by adding up all  the patches.  </p>
 -->
 
+  <h2>&nbsp;</h2>
   <h2>Sistemas de Controle de Versão Centralizado</h2>
   <p>
     O próximo grande problema que as pessoas encontram é que precisam colaborar com desenvolvedores em outros sistemas. Para lidar com esse problema,
@@ -309,6 +312,7 @@ Jon Freed Sean Jacobs
   <p class="style1">However, this setup also has some serious downsides. The most obvious is the single point of failure  that the centralized server represents. If that server goes down for an hour, then during that hour  nobody can collaborate at all or save versioned changes to anything they’re working on. If the hard  disk the central database is on becomes corrupted, and proper backups haven’t been kept, you lose  absolutely everything — the entire history of the project except whatever single snapshots people  happen to have on their local machines. Local VCSs suffer from this same problem — whenever you  have the entire history of the project in a single place, you risk losing everything.  </p>
 -->
 
+  <h2>&nbsp;</h2>
   <h2>Sistemas de Controle de Versão Distribuída</h2>
   <p>
     É aqui que entram os Sistemas de Controle de Versão Distribuída (DVCSs). Em um DVCS (como Git, Mercurial, Bazaar ou Darcs), os clientes não verificam apenas o instantâneo mais recente dos arquivos; em vez disso, eles espelham totalmente o repositório, incluindo seu histórico completo. Portanto, se algum servidor morrer e esses sistemas estiverem colaborando por meio desse servidor, qualquer um dos repositórios do cliente poderá ser copiado de volta para o servidor para restaurá-lo. Cada clone é realmente um backup completo de todos os dados.
@@ -320,17 +324,24 @@ Jon Freed Sean Jacobs
   <p class="style1">This is where Distributed Version Control Systems (DVCSs) step in. In a DVCS (such as Git, Mercurial,  Bazaar or Darcs), clients don’t just check out the latest snapshot of the files; rather, they fully  mirror the repository, including its full history. Thus, if any server dies, and these systems were  collaborating via that server, any of the client repositories can be copied back up to the server to  restore it. Every clone is really a full backup of all the data</p>
 -->
   <figure class="figure">
-    <img src="images/image_2.png" class="figure-img img-fluid rounded" alt="...">
     <figcaption class="figure-caption">...</figcaption>
   </figure>
 
   <p><img src="images/image_3.png" width="586" height="702"></p>
   <p>Furthermore, many of these systems deal pretty well with having several remote repositories they  can work with, so you can collaborate with different groups of people in different ways  simultaneously within the same project. This allows you to set up several types of workflows that  aren’t possible in centralized systems, such as hierarchical models.</p>
+  <p>Além disso, muitos desses sistemas lidam muito bem com vários repositórios remotos com os quais podem trabalhar, para que você possa colaborar com diferentes grupos de pessoas de maneiras diferentes simultaneamente no mesmo projeto. Isso permite configurar vários tipos de fluxos de trabalho que não são possíveis em sistemas centralizados, como modelos hierárquicos.</p>
 
   <p><strong>A Short History of Git  </strong></p>
+  <p>Uma Breve História do Git</p>
+  <p>&nbsp;</p>
   <p>As with many great things in life, Git began with a bit of creative destruction and fiery controversy.  </p>
+  <p>Assim como acontece com muitas coisas boas na vida, o Git começou com um pouco de destruição criativa e controvérsia inflamada.</p>
+  <p>&nbsp;</p>
   <p>The Linux kernel is an open source software project of fairly large scope. During the early years of  the Linux kernel maintenance (1991–2002), changes to the software were passed around as patches  and archived files. In 2002, the Linux kernel project began using a proprietary DVCS called  BitKeeper.  </p>
+  <p>The Linux kernel is an open source software project of fairly large scope. During the early years of  the Linux kernel maintenance (1991–2002), changes to the software were passed around as patches  and archived files. In 2002, the Linux kernel project began using a proprietary DVCS called  BitKeeper. </p>
+  <p>&nbsp;</p>
   <p>In 2005, the relationship between the community that developed the Linux kernel and the  commercial company that developed BitKeeper broke down, and the tool’s free-of-charge status  was revoked. This prompted the Linux development community (and in particular Linus Torvalds,  the creator of Linux) to develop their own tool based on some of the lessons they learned while  using BitKeeper. Some of the goals of the new system were as follows:  </p>
+  <p>Em 2005, o relacionamento entre a comunidade que desenvolveu o kernel do Linux e a empresa comercial que desenvolveu o BitKeeper foi rompido, e o status gratuito da ferramenta foi revogado. Isso levou a comunidade de desenvolvimento do Linux (e em particular Linus Torvalds, o criador do Linux) a desenvolver sua própria ferramenta com base em algumas das lições que aprenderam ao usar o BitKeeper. Alguns dos objetivos do novo sistema foram os seguintes:</p>
   <ul>
     <li>Speed</li>
     <li> Simple design</li>
@@ -338,19 +349,43 @@ Jon Freed Sean Jacobs
     <li> Fully distributed</li>
     <li> Able to handle large projects like the Linux kernel efficiently (speed and data size) </li>
   </ul>
+  <ul>
+    <li>Velocidade</li>
+    <li>Design simples</li>
+    <li> Forte suporte para desenvolvimento não linear (milhares de ramificações paralelas)</li>
+    <li>Totalmente distribuído</li>
+    <li> Capaz de lidar com grandes projetos como o kernel do Linux de forma eficiente (velocidade e tamanho dos dados)</li>
+  </ul>
+  <p>&nbsp;</p>
   <p>Since its birth in 2005, Git has evolved and matured to be easy to use and yet retain these initial  qualities. It’s amazingly fast, it’s very efficient with large projects, and it has an incredible  branching system for non-linear development (see Git Branching).</p>
+  <p>Desde seu nascimento em 2005, o Git evoluiu e amadureceu para ser fácil de usar e ainda manter essas qualidades iniciais. É incrivelmente rápido, muito eficiente em grandes projetos e possui um incrível sistema de ramificação para desenvolvimento não linear (consulte Git Branching).</p>
   <p><strong>What is Git?  </strong></p>
+  <p>O que é Git?</p>
   <p>So, what is Git in a nutshell? This is an important section to absorb, because if you understand what  Git is and the fundamentals of how it works, then using Git effectively will probably be much easier  for you. As you learn Git, try to clear your mind of the things you may know about other VCSs, such  as CVS, Subversion or Perforce — doing so will help you avoid subtle confusion when using the tool.  Even though Git’s user interface is fairly similar to these other VCSs, Git stores and thinks about  information in a very different way, and understanding these differences will help you avoid  becoming confused while using it.  </p>
+  <p>Então, o que é Git em poucas palavras? Esta é uma seção importante a ser absorvida, porque se você entender o que é o Git e os fundamentos de como ele funciona, usar o Git de forma eficaz provavelmente será muito mais fácil para você. À medida que você aprende Git, tente limpar sua mente das coisas que você pode saber sobre outros VCSs, como CVS, Subversion ou Perforce — isso o ajudará a evitar confusões sutis ao usar a ferramenta. Embora a interface do usuário do Git seja bastante semelhante a esses outros VCSs, o Git armazena e pensa sobre as informações de uma maneira muito diferente, e entender essas diferenças ajudará você a evitar confusão ao usá-lo.</p>
   <p><strong>Snapshots, Not Differences  </strong></p>
+  <p>Instantâneos, não diferenças</p>
   <p>The major difference between Git and any other VCS (Subversion and friends included) is the way  Git thinks about its data. Conceptually, most other systems store information as a list of file-based  changes. These other systems (CVS, Subversion, Perforce, Bazaar, and so on) think of the  information they store as a set of files and the changes made to each file over time (this is  commonly described as delta-based version control). </p>
+  <p>A principal diferença entre o Git e qualquer outro VCS (Subversion e amigos incluídos) é a maneira como o Git pensa sobre seus dados. Conceitualmente, a maioria dos outros sistemas armazena informações como uma lista de alterações baseadas em arquivo. Esses outros sistemas (CVS, Subversion, Perforce, Bazaar e assim por diante) pensam nas informações que armazenam como um conjunto de arquivos e as alterações feitas em cada arquivo ao longo do tempo (isso é comumente descrito como controle de versão baseado em delta).</p>
   <p><img src="images/image_4.png" width="614" height="246"></p>
   <p>Figure 4. Storing data as changes to a base version of each file  </p>
+  <p>Figura 4. Armazenando dados como alterações em uma versão base de cada arquivo</p>
+  <p>&nbsp;</p>
   <p>Git doesn’t think of or store its data this way. Instead, Git thinks of its data more like a series of  snapshots of a miniature filesystem. With Git, every time you commit, or save the state of your  project, Git basically takes a picture of what all your files look like at that moment and stores a  reference to that snapshot. To be efficient, if files have not changed, Git doesn’t store the file again,  just a link to the previous identical file it has already stored. Git thinks about its data more <strong>like a  stream of snapshots</strong>.</p>
+  <p>O Git não pensa ou armazena seus dados dessa maneira. Em vez disso, o Git pensa em seus dados mais como uma série de instantâneos de um sistema de arquivos em miniatura. Com o Git, toda vez que você confirma ou salva o estado do seu projeto, o Git basicamente tira uma foto da aparência de todos os seus arquivos naquele momento e armazena uma referência a esse instantâneo. Para ser eficiente, se os arquivos não foram alterados, o Git não armazena o arquivo novamente, apenas um link para o arquivo anterior idêntico que ele já armazenou. O Git pensa em seus dados mais como um fluxo de instantâneos.</p>
+  <p>&nbsp;</p>
   <p><img src="images/image_5.png" width="604" height="239"></p>
+  <p>&nbsp;</p>
   <p><strong>Nearly Every Operation Is Local  </strong></p>
+  <p>Quase todas as operações são locais</p>
   <p>Most operations in Git need only local files and resources to operate — generally no information is  needed from another computer on your network. If you’re used to a CVCS where most operations  have that network latency overhead, this aspect of Git will make you think that the gods of speed  have blessed Git with unworldly powers. Because you have the entire history of the project right  there on your local disk, most operations seem almost instantaneous. </p>
+  <p>A maioria das operações no Git precisa apenas de arquivos e recursos locais para operar — geralmente nenhuma informação é necessária de outro computador em sua rede. Se você está acostumado a um CVCS em que a maioria das operações tem sobrecarga de latência de rede, esse aspecto do Git fará você pensar que os deuses da velocidade abençoaram o Git com poderes sobrenaturais. Como você tem todo o histórico do projeto no disco local, a maioria das operações parece quase instantânea.</p>
+  <p>&nbsp;</p>
   <p>For example, to browse the history of the project, Git doesn’t need to go out to the server to get the  history and display it for you — it simply reads it directly from your local database. This means you  see the project history almost instantly. If you want to see the changes introduced between the  current version of a file and the file a month ago, Git can look up the file a month ago and do a local  difference calculation, instead of having to either ask a remote server to do it or pull an older  version of the file from the remote server to do it locally.  </p>
+  <p>Por exemplo, para navegar pelo histórico do projeto, o Git não precisa ir até o servidor para obter o histórico e exibi-lo para você — ele simplesmente o lê diretamente do seu banco de dados local. Isso significa que você vê o histórico do projeto quase instantaneamente. Se você quiser ver as alterações introduzidas entre a versão atual de um arquivo e o arquivo de um mês atrás, o Git pode procurar o arquivo de um mês atrás e fazer um cálculo de diferença local, em vez de pedir a um servidor remoto para fazer isso ou extraia uma versão mais antiga do arquivo do servidor remoto para fazer isso localmente.</p>
+  <p>&nbsp;</p>
   <p>This also means that there is very little you can’t do if you’re offline or off VPN. If you get on an  airplane or a train and want to do a little work, you can commit happily (to your local copy,  remember?) until you get to a network connection to upload. If you go home and can’t get your VPN  client working properly, you can still work. In many other systems, doing so is either impossible or  painful. In Perforce, for example, you can’t do much when you aren’t connected to the server; in  Subversion and CVS, you can edit files, but you can’t commit changes to your database (because  your database is offline). This may not seem like a huge deal, but you may be surprised what a big  difference it can make</p>
+  <p>Isso também significa que há muito pouco que você não pode fazer se estiver offline ou sem VPN. Se você entrar em um avião ou trem e quiser fazer um pouco de trabalho, pode se comprometer alegremente (para sua cópia local, lembra?) até chegar a uma conexão de rede para fazer o upload. Se você for para casa e não conseguir que seu cliente VPN funcione corretamente, ainda poderá trabalhar. Em muitos outros sistemas, fazer isso é impossível ou doloroso. No Perforce, por exemplo, você não pode fazer muito quando não está conectado ao servidor; no Subversion e no CVS, você pode editar arquivos, mas não pode fazer alterações em seu banco de dados (porque seu banco de dados está offline). Isso pode não parecer grande coisa, mas você pode se surpreender com a grande diferença que pode fazer</p>
   <p>Git Has Integrity  </p>
   <p>Everything in Git is checksummed before it is stored and is then referred to by that checksum. This  means it’s impossible to change the contents of any file or directory without Git knowing about it.  This functionality is built into Git at the lowest levels and is integral to its philosophy. You can’t lose  information in transit or get file corruption without Git being able to detect it.  The mechanism that Git uses for this checksumming is called a SHA-1 hash. This is a 40-character  string composed of hexadecimal characters (0–9 and a–f) and calculated based on the contents of a  file or directory structure in Git. A SHA-1 hash looks something like this:</p>
   <div>
