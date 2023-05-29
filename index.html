@@ -22,18 +22,18 @@
   <h1>ProGit</h1>
 
   <h2>
-Pro Git
-Scott Chacon, Ben Straub
+Pro Git <a class="btn btn-link" href="https://github.com/schacon" role="button" target="_blank">Scott Chacon</a>
+, <a class="btn btn-link" href="https://github.com/ben" role="button" target="_blank">Ben Straub</a>
 Version 2.1.394-2-g428d69ac, 2023-05-09
 
   </h2>
 
-  <h3>
+  <h5>
     License
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0
 Unported License. To view a copy of this license, visit https://creativecommons.org/licenses/by-ncsa/3.0 or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-  </h3>
+  </h5>
 
   <h4>Preface by Scott Chacon</h4>
 
@@ -78,8 +78,10 @@ that is both quite successful and fully open source.
 I hope you enjoy this updated edition of Pro Git.
 
   </p>
+  <p>Bem-vindo à segunda edição do Pro Git. A primeira edição foi publicada há mais de quatro anos. Desde então, muita coisa mudou e, no entanto, muitas coisas importantes não mudaram. Embora a maioria dos comandos e conceitos principais ainda sejam válidos hoje, já que a equipe principal do Git é fantástica em manter as coisas compatíveis com versões anteriores, houve algumas adições e mudanças significativas na comunidade em torno do Git. A segunda edição deste livro destina-se a abordar essas mudanças e atualizar o livro para que seja mais útil para o novo usuário. Quando escrevi a primeira edição, o Git ainda era uma ferramenta relativamente difícil de usar e mal adotada pelo hacker mais exigente. Estava começando a ganhar força em certas comunidades, mas não havia chegado nem perto da onipresença que tem hoje. Desde então, quase todas as comunidades de código aberto o adotaram. O Git fez um progresso incrível no Windows, na explosão de interfaces gráficas de usuário para todas as plataformas, no suporte IDE e no uso comercial. O Pro Git de quatro anos atrás não sabe nada disso. Um dos principais objetivos desta nova edição é tocar em todas essas novas fronteiras da comunidade Git. A comunidade Open Source usando Git também explodiu. Quando me sentei originalmente para escrever o livro há quase cinco anos (demorei um pouco para lançar a primeira versão), tinha acabado de começar a trabalhar em uma empresa muito pouco conhecida desenvolvendo um site de hospedagem Git chamado GitHub. No momento da publicação, havia talvez alguns milhares de pessoas usando o site e apenas quatro de nós trabalhando nele. Enquanto escrevo esta introdução, o GitHub está anunciando nosso 10 milhões de projetos hospedados, com quase 5 milhões de contas de desenvolvedores registrados e mais de 230 funcionários. Ame ou odeie, o GitHub mudou fortemente grandes áreas da comunidade Open Source de uma forma que era quase inconcebível quando me sentei para escrever a primeira edição. Escrevi uma pequena seção na versão original do Pro Git sobre o GitHub como um exemplo de Git hospedado com o qual nunca me senti muito confortável. Não gostei muito de estar escrevendo o que considero essencialmente um recurso da comunidade e também falando sobre minha empresa nele. Embora eu ainda não goste desse conflito de interesses, a importância do GitHub na comunidade Git é inevitável. Em vez de um exemplo de hospedagem do Git, decidi transformar essa parte do livro em uma descrição mais profunda do que é o GitHub e como usá-lo com eficiência. Se você vai aprender a usar o Git, saber como usar o GitHub o ajudará a fazer parte de uma grande comunidade, que é valiosa, não importa qual host Git você decida usar para seu próprio código. A outra grande mudança desde a última publicação foi o desenvolvimento e ascensão do protocolo HTTP para transações de rede Git. A maioria dos exemplos do livro foi alterada para HTTP de SSH porque é muito mais simples. Tem sido incrível ver o Git crescer nos últimos anos de um sistema de controle de versão relativamente obscuro para basicamente dominar o controle de versão comercial e de código aberto. Estou feliz que o Pro Git tenha se saído tão bem e também tenha conseguido ser um dos poucos livros técnicos no mercado que é bastante bem-sucedido e totalmente de código aberto. Espero que você goste desta edição atualizada do Pro Git.</p>
 
     <h4>Preface by Ben Straub</h4>
+    <p>Prefácio de Ben Straub</p>
     <p>
 The first edition of this book is what got me hooked on Git. This was my introduction to a style of
 making software that felt more natural than anything I had seen before. I had been a developer for
@@ -92,9 +94,11 @@ It’s been a great pleasure and privilege to work on this book. I hope it helps
 me.
 
     </p>
+    <p>A primeira edição deste livro foi o que me deixou viciado no Git. Esta foi minha introdução a um estilo de criação de software que parecia mais natural do que qualquer coisa que eu já tivesse visto antes. Eu já era desenvolvedor há vários anos, mas essa foi a curva certa que me levou a um caminho muito mais interessante do que aquele em que eu estava. Agora, anos depois, sou colaborador de uma grande implementação do Git, trabalhei para a maior empresa de hospedagem do Git e viajei pelo mundo ensinando às pessoas sobre o Git. Quando Scott perguntou se eu estaria interessado em trabalhar na segunda edição, nem precisei pensar. Foi um grande prazer e privilégio trabalhar neste livro. Espero que ajude vocês tanto quanto ajudou a mim.</p>
 
 
 <h4>Dedications</h4>
+<p>Dedicatórias</p>
     <p>
       
 To my wife, Becky, without whom this adventure never would have begun. — Ben
@@ -102,13 +106,16 @@ This edition is dedicated to my girls. To my wife Jessica who has supported me f
 and to my daughter Josephine, who will support me when I’m too old to know what’s going on. —
 Scott
     </p>
+    <p>À minha esposa, Becky, sem a qual esta aventura nunca teria começado. — Ben Esta edição é dedicada às minhas meninas. À minha esposa Jessica, que me apoiou durante todos esses anos, e à minha filha Josephine, que me apoiará quando eu estiver velho demais para saber o que está acontecendo. — Scott</p>
 <h4>Contributors</h4>
+<p>Contribuidores</p>
 
 <p>
   Since this is an Open Source book, we have gotten several errata and content changes donated over
 the years. Here are all the people who have contributed to the English version of Pro Git as an open
 source project. Thank you everyone for helping make this a better book for everyone.
 </p>
+<p>Como este é um livro de código aberto, recebemos várias errata e alterações de conteúdo doadas ao longo dos anos. Aqui estão todas as pessoas que contribuíram para a versão em inglês do Pro Git como um projeto de código aberto. Obrigado a todos por ajudarem a tornar este livro melhor para todos.</p>
 <table width="100%" class="table">
   <tr>
     <td><a class="btn btn-link" href="https://github.com/4wk-" role="button" target="_blank">4wk-</a></td>
@@ -137,28 +144,28 @@ source project. Thank you everyone for helping make this a better book for every
   </tr>
   <tr>
     <td><a class="btn btn-link" href="https://github.com/mildsunrise" role="button" target="_blank">Alba Mendez</a></td>
-    <td>Junjie Yuan</td>
-    <td>Shi Yan</td>
+    <td><a class="btn btn-link" href="https://gitlab.gnome.org/junjie" role="button" target="_blank">Junjie Yuan</a></td>
+    <td><a class="btn btn-link" href="https://github.com/shi-yan" role="button" target="_blank">Shi Yan</a></td>
   </tr>
   <tr>
-    <td>Aleh Suprunovich</td>
-    <td>Junyeong Yim</td>
-    <td>Siarhei Bobryk</td>
+    <td><a class="btn btn-link" href="https://github.com/metabr" role="button" target="_blank">Aleh Suprunovich</a></td>
+    <td><a class="btn btn-link" href="https://www.linkedin.com/in/jinyeong/" role="button" target="_blank">Junyeong Yim</a></td>
+    <td><a class="btn btn-link" href="https://github.com/siarheibobryk/" role="button" target="_blank">Siarhei Bobryk</a></td>
   </tr>
   <tr>
-    <td>Alex Povel</td>
-    <td>Justin Clift</td>
-    <td>Siarhei Krukau</td>
+    <td><a class="btn btn-link" href="https://github.com/alexpovel" role="button" target="_blank">Alex Povel</a></td>
+    <td><a class="btn btn-link" href="https://github.com/justinclift" role="button" target="_blank">Justin Clift</a></td>
+    <td><a class="btn btn-link" href="https://www.linkedin.com/in/krukaus/" role="button" target="_blank">Siarhei Krukau</a></td>
   </tr>
   <tr>
-    <td>Alexander Bezzubov</td>
-    <td>Jörn Auerbach</td>
-    <td>Skyper</td>
+    <td><a class="btn btn-link" href="https://www.linkedin.com/in/alexanderbzz/" role="button" target="_blank">Alexander Bezzubov</a></td>
+    <td><a class="btn btn-link" href="https://github.com/jo3rn" role="button" target="_blank">Jörn Auerbach</a></td>
+    <td><a class="btn btn-link" href="https://github.com/Skyper" role="button" target="_blank">Skyper</a></td>
   </tr>
   <tr>
-    <td>Alexandre Garnier</td>
-    <td>Kaartic Sivaraam</td>
-    <td>Smaug123</td>
+    <td><a class="btn btn-link" href="https://github.com/zigarn" role="button" target="_blank">Alexandre Garnier</a></td>
+    <td><a class="btn btn-link" href="https://github.com/sivaraam" role="button" target="_blank">Kaartic Sivaraam</a></td>
+    <td><a class="btn btn-link" href="https://github.com/Smaug123/" role="button" target="_blank">Smaug123</a></td>
   </tr>
   <tr>
     <td>Alfred Myers</td>
@@ -340,39 +347,134 @@ source project. Thank you everyone for helping make this a better book for every
   </tr>
   
   <tr>
+    <td>Christoph Prokop</td>
+    <td>Michael MacAskill</td>
+    <td>Y. E</td>
+  </tr>
+  
+  <tr>
+    <td>Christopher Wilson</td>
+    <td>Michael Sheaver</td>
+    <td>Yann Soubeyrand</td>
+  </tr>
+  
+  <tr>
+    <td>CodingSpiderFox</td>
+    <td>Michael Welch</td>
+    <td>Your Name</td>
+  </tr>
+  
+  <tr>
+    <td>Cory Donnelly</td>
+    <td>Michiel van der Wulp</td>
+    <td>Yue Lin Ho</td>
+  </tr>
+  
+  <tr>
+    <td>Cullen Rhodes</td>
+    <td>Miguel Bernabeu</td>
+    <td>Yunhai Luo</td>
+  </tr>
+  
+  <tr>
+    <td>Cyril</td>
+    <td>Mike Charles</td>
+    <td>Yusuke SATO</td>
+  </tr>
+  
+  <tr>
+    <td>Damien Tournoud</td>
+    <td>Mike Pennisi</td>
+    <td>ajax333221</td>
+  </tr>
+  
+  <tr>
+    <td>Dan Schmidt</td>
+    <td>Mike Thibodeau</td>
+    <td>dalex-koziell</td>
+  </tr>
+  
+  <tr>
+    <td>Daniel Hollas</td>
+    <td>Mikhail Menshikov</td>
+    <td>allen joslin</td>
+  </tr>
+  
+  <tr>
+    <td>Daniel Knittl-Frank</td>
+    <td>Mitsuru Kariya</td>
+    <td>andreas</td>
+  </tr>
+  
+  <tr>
+    <td>Daniel Shahaf</td>
+    <td>Máximo Cuadros</td>
+    <td>applecuckoo</td>
+  </tr>
+  
+  <tr>
+    <td>Daniel Sturm</td>
+    <td>Niels Widger</td>
+    <td>atalakam</td>
+  </tr>
+  
+  <tr>
+    <td>Daniele Tricoli</td>
+    <td>Niko Stotz</td>
+    <td>axmbo</td>
+  </tr>
+  
+  <tr>
+    <td>Daniil Larionov</td>
+    <td>Nils Reuße</td>
+    <td>bripmccann</td>
+  </tr>
+  
+  <tr>
+    <td>Danny Lin</td>
+    <td>Noelle Leigh</td>
+    <td>brotherben</td>
+  </tr>
+  
+  <tr>
+    <td>David Rogers</td>
+    <td>OliverSieweke</td>
+    <td>delta4d</td>
+  </tr>
+  
+  <tr>
+    <td>Davide Angelocola</td>
+    <td>Olleg Samoylov</td>
+    <td>devwebcl</td>
+  </tr>
+  
+  <tr>
+    <td>Denis Savitskiy</td>
+    <td>Osman Khwaja</td>
+    <td>dualsky</td>
+  </tr>
+  
+  <tr>
+    <td>Dexter</td>
+    <td>Owen</td>
+    <td>evanderiel</td>
+  </tr>
+  
+  <tr>
     <td></td>
     <td></td>
     <td></td>
   </tr>
   
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
   
 </table>
-<p>&nbsp;</p>
+<p> 
 
-<p>
-
-  
- 
-  
-Christoph Prokop Michael MacAskill Y. E
-Christopher Wilson Michael Sheaver Yann Soubeyrand
-CodingSpiderFox Michael Welch Your Name
-Cory Donnelly Michiel van der Wulp Yue Lin Ho
-Cullen Rhodes Miguel Bernabeu Yunhai Luo
-Cyril Mike Charles Yusuke SATO
-Damien Tournoud Mike Pennisi ajax333221
-Dan Schmidt Mike Thibodeau alex-koziell
-Daniel Hollas Mikhail Menshikov allen joslin
-Daniel Knittl-Frank Mitsuru Kariya andreas
-Daniel Shahaf Máximo Cuadros applecuckoo
-Daniel Sturm Niels Widger atalakam
-Daniele Tricoli Niko Stotz axmbo
-Daniil Larionov Nils Reuße bripmccann
-Danny Lin Noelle Leigh brotherben
-David Rogers OliverSieweke delta4d
-Davide Angelocola Olleg Samoylov devwebcl
-Denis Savitskiy Osman Khwaja dualsky
-Dexter Owen evanderiel
 Dexter Morganov Pablo Schläpfer eyherabh
 DiamondeX Pascal Berger flip111
 Dieter Ziller Pascal Borreli flyingzumwalt
